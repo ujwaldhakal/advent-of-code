@@ -1,4 +1,4 @@
-package main
+package day1
 
 import (
 	"bufio"
@@ -9,18 +9,19 @@ import (
 	"strconv"
 )
 
-func main()  {
+func SolvePuzzle()  {
 
+	fmt.Println("got here")
 	calories := sortedCalories()
 	fmt.Println("highest calorie",calories[0] );
 	fmt.Println("top 3 total highest calorie",calories[0] + calories[1] + calories[2]);
 }
 
-func readFileLineByLine(fileName string) (*os.File, *bufio.Scanner) {
+func ReadFileLineByLine(fileName string) (*os.File, *bufio.Scanner) {
 	data,err := os.Open(fileName)
 
 	if err != nil {
-		log.Fatalln("something went wrong")
+		log.Fatalln("something went wrong reading file",err)
 	}
 
 
@@ -30,7 +31,7 @@ func readFileLineByLine(fileName string) (*os.File, *bufio.Scanner) {
 }
 
 func sortedCalories() []int {
-	file,input := readFileLineByLine("input.txt")
+	file,input := ReadFileLineByLine("day1/input.txt")
 	defer file.Close()
 
 	var highestCalorie []int
