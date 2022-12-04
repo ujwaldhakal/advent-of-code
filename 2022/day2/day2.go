@@ -45,7 +45,6 @@ func puzzle1()  {
 	file,input := day1.ReadFileLineByLine("day2/input.txt")
 
 
-
 	defer file.Close()
 
 	totalPoints := 0
